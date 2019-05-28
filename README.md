@@ -33,22 +33,22 @@ Unable to shuffle if the fields are not of same length
 解决办法：卸载numpy包，重新安装1.13.0版本的numpy
 
 ```
-    pip3 uninstall numpy
-    pip3 install numpy==1.13.0
+pip3 uninstall numpy
+pip3 install numpy==1.13.0
 ```
 
 ## 实验<1>
 1. 在Unity中打开Assets/Experiment/Experiment1场景
 2. 进入Train/Experiment1文件夹，进行训练
 
-    ```
-    cd Train/Experiment1
-    mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
-    ```
+```
+cd Train/Experiment1
+mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
+```
 
     在Unity编辑器中，点击“运行”
 3. 查看训练报告
 
-    `tensorboard --logdir=summaries`
+`tensorboard --logdir=summaries`
 
     在浏览器中进入[http://localhost:6006](http://localhost:6006)查看报告
