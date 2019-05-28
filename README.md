@@ -30,7 +30,7 @@ AI只能获得小球当前的位置和速度，以及目标点的位置，然后
 ### numpy版本问题
 由于在Python中安装ml-agents包时需要依赖numpy，而最新的numpy包（>1.13.0）和ml-agents有兼容问题，在训练时会报如下错误：
 
-`Unable to shuffle if the fields are not of same length`
+>"Unable to shuffle if the fields are not of same length"
 
 解决办法：卸载numpy包，重新安装1.13.0版本的numpy
 
@@ -40,8 +40,8 @@ pip3 install numpy==1.13.0
 ```
 
 ## 实验<1>
-1. 在Unity中打开Assets/Experiment/Experiment1场景
-2. 进入Train/Experiment1文件夹，运行训练程序
+1. 在Unity中打开`Assets/Experiment/Experiment1`场景
+2. 进入`Train/Experiment1`文件夹，运行训练程序
 
     ```
     cd Train/Experiment1
