@@ -45,7 +45,10 @@ pip3 install numpy==1.13.0
     cd Train/Experiment1
     mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
     ```
+    
     在Unity编辑器中，点击“运行”
 3. 查看训练报告
+
     `tensorboard --logdir=summaries`
+    
     在浏览器中进入[http://localhost:6006](http://localhost:6006)查看报告
