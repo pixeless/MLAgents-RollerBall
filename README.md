@@ -19,12 +19,12 @@ AI只能获得小球当前的位置和速度，以及目标点的位置，然后
 * 安装Unity 2017.4或更新版本
 * 获取ml-agents源码
 
-    `git clone https://github.com/Unity-Technologies/ml-agents.git`
+    `$ git clone https://github.com/Unity-Technologies/ml-agents.git`
     
     *使用本工程中的范例程序不需要额外下载，ml-agents相关代码已经包含在工程代码中。*
 * 安装Pyton3.6以及mlagents包
 
-    `pip3 install mlagents`
+    `$ pip3 install mlagents`
 
     注意：不支持Python3.7和Python3.5
 
@@ -36,8 +36,8 @@ AI只能获得小球当前的位置和速度，以及目标点的位置，然后
 解决办法：卸载numpy包，重新安装1.13.0版本的numpy
 
 ```
-pip3 uninstall numpy
-pip3 install numpy==1.13.0
+$ pip3 uninstall numpy
+$ pip3 install numpy==1.13.0
 ```
 
 ## 实验<1>
@@ -45,8 +45,8 @@ pip3 install numpy==1.13.0
 2. 进入`Train/Experiment1`文件夹，运行训练程序
 
     ```
-    cd Train/Experiment1
-    mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
+    $ cd Train/Experiment1
+    $ mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
     ```
     
     在Unity编辑器中，点击“运行”，开始训练
@@ -63,3 +63,27 @@ pip3 install numpy==1.13.0
 ### 训练报告
 
 ![报告](Images/Experiment1.png)
+
+## 实验<2>
+1. 在Unity中打开`Assets/Experiment/Experiment2`场景
+2. 进入`Train/Experiment2`文件夹，运行训练程序
+
+    ```
+    $ cd Train/Experiment2
+    $ mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
+    ```
+    
+    在Unity编辑器中，点击“运行”，开始训练
+3. 查看训练报告
+
+    `$ tensorboard --logdir=summaries`
+    
+    进入[http://localhost:6006](http://localhost:6006)查看报告
+    
+### 训练结果
+
+![结果](Images/Experiment2.gif)
+
+### 训练报告
+
+![报告](Images/Experiment2.png)
