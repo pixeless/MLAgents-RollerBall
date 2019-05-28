@@ -55,3 +55,11 @@ pip3 install numpy==1.13.0
     `tensorboard --logdir=summaries`
     
     进入[http://localhost:6006](http://localhost:6006)查看报告
+    
+### 训练结果
+
+![结果](Images/Experiment1.gif)
+
+### 训练报告
+
+![报告](Images/Experiment1.png)
