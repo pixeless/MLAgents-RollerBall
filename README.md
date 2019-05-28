@@ -58,7 +58,7 @@ $ pip3 install numpy==1.13.0
     
 ### 训练结果
 
-![结果](Images/Experiment1.gif)
+<img src="Images/Experiment1.gif" align="middle" width="600"/>
 
 ### 训练报告
 
@@ -82,7 +82,7 @@ $ pip3 install numpy==1.13.0
     
 ### 训练结果
 
-![结果](Images/Experiment2.gif)
+<img src="Images/Experiment2.gif" align="middle" width="800"/>
 
 ### 训练报告
 
