@@ -16,6 +16,7 @@ public class RollerAgent2 : Agent
 
     void Update()
     {
+
         if( Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -25,15 +26,16 @@ public class RollerAgent2 : Agent
                 GameObject colliderObj = hit.collider.gameObject;
                 if(colliderObj != gameObject && colliderObj != Target.gameObject)
                 {
-                    Target.position = new Vector3(hit.point.x, 0.5f, hit.point.z);
+                    Target.localPosition = new Vector3(hit.point.x, 0.5f, hit.point.z);
                 }
             }
         }
+
     }
 
     public override void AgentReset()
     {
-        if( this.transform.position.y < 0.0f )
+        if( transform.localPosition.y < 0.0f )
         {
             // Reset Roller Ball Positon
             this.rBody.angularVelocity = Vector3.zero;
@@ -41,19 +43,19 @@ public class RollerAgent2 : Agent
 
             /*
             int offsetRoller = Random.value > 0.5f ? 1 : -1;
-            this.transform.position = new Vector3(0, 0.5f, offsetRoller * 2);
+            this.transform.localPosition = new Vector3(0, 0.5f, offsetRoller * 2);
             */
-            this.transform.position = new Vector3(0, 0.5f, 0);
+            this.transform.localPosition = new Vector3(0, 0.5f, 0);
         }
         // Reset Target Position
         int offset = Random.value > 0.5f ? 1 : -1;
-        Target.position = new Vector3(Random.value * 10 - 5 + 10 * offset, 0.5f, Random.value * 10 - 5);
+        Target.localPosition = new Vector3(Random.value * 10 - 5 + 10 * offset, 0.5f, Random.value * 10 - 5);
     }
 
     public override void CollectObservations()
     {
-        AddVectorObs(Target.position);
-        AddVectorObs(this.transform.position);
+        AddVectorObs(Target.localPosition);
+        AddVectorObs(transform.localPosition);
 
         AddVectorObs(rBody.velocity.x);
         AddVectorObs(rBody.velocity.z);
@@ -68,8 +70,7 @@ public class RollerAgent2 : Agent
         rBody.AddForce(controlSignal * Speed);
 
         // Rewards
-        //AddReward(-0.001f);
-        float distanceTotarget = Vector3.Distance(this.transform.position, Target.position);
+        float distanceTotarget = Vector3.Distance(transform.localPosition, Target.localPosition);
 
         // Reached target
         if( distanceTotarget < 1.42f)
@@ -78,15 +79,15 @@ public class RollerAgent2 : Agent
             Done();
         }
         // Fell off platform
-        if( this.transform.position.y < 0)
+        if( transform.localPosition.y < 0)
         {
-            SetReward(-1.0f);
+            //SetReward(-1.0f);
             Done();
         }
 
-        if( this.GetStepCount() > 12768 )
+        if( GetStepCount() > 12768 )
         {
-            SetReward(-1.0f);
+            //SetReward(-1.0f);
             Done();
         }
     }

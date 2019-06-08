@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 07c875c20098f468295c5c87ae73745e
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400002: Assets/Experiments/Experiment2/Models/LearningBrain1.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}
