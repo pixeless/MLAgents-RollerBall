@@ -41,7 +41,7 @@ $ pip3 install numpy==1.13.0
 ```
 
 ## 实验<1>
-1. 在Unity中打开`Assets/Experiment/Experiment1`场景
+1. 在Unity中打开`Assets/Experiment/Experiment1/Scenes/RollerScene1`场景
 2. 进入`Train/Experiment1`文件夹，运行训练程序
 
     ```
@@ -65,12 +65,12 @@ $ pip3 install numpy==1.13.0
 ![报告](Images/Experiment1.png)
 
 ## 实验<2>
-1. 在Unity中打开`Assets/Experiment/Experiment2`场景
+1. 在Unity中打开`Assets/Experiment/Experiment2/Scenes/RollerTrainScene2`场景
 2. 进入`Train/Experiment2`文件夹，运行训练程序
 
     ```
     $ cd Train/Experiment2
-    $ mlagents-learn config/config.yaml --run-id=RollerBall-1 --train
+    $ mlagents-learn config/config1.yaml --run-id=RollerBall-1 --train
     ```
     
     在Unity编辑器中，点击“运行”，开始训练
